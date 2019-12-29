@@ -90,6 +90,9 @@ class TeamcityReport(Plugin):
         self.enabled = is_running_under_teamcity()
         self.config = conf
 
+        if not self.enabled:
+            return
+
         if self._capture_plugin_enabled():
             capture_plugin = self._get_capture_plugin()
 
